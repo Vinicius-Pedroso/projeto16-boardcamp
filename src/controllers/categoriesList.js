@@ -1,14 +1,13 @@
 
 
 export async function categoriesList (req, res) {
-    const id = parseInt(req.params.id);
   
     try {
-        const product = await connection.query('SELECT * FROM produtos');
+        const product = await connection.query('SELECT * FROM categories');
         res.status(200).send(product.rows[0]);
       } catch (err) {
         console.log(err);
-        res.sendStatus(500);
+        return res.sendStatus(500);
     }
 
   };

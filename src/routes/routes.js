@@ -1,9 +1,12 @@
 import { Router } from "express";
+import { categoriesCreate } from "../controllers/categoriesCreate";
+import { categoriesList } from "../controllers/categoriesList";
+import { categoriesValidation } from "../middleware/categoriesValidation";
 
 const router = Router();
 
-router.get("/categories",)
-router.post("/categories",);
+router.get("/categories", categoriesList)
+router.post("/categories", categoriesValidation, categoriesCreate);
 router.get("/games", );
 router.post("/games", )
 router.get("/customer", )
