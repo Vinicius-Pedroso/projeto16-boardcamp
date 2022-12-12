@@ -4,6 +4,7 @@ import { categoriesList } from "../controllers/categoriesList";
 import { gamesCreate } from "../controllers/gamesCreate";
 import { gamesList } from "../controllers/gamesList";
 import { categoriesValidation } from "../middleware/categoriesValidation";
+import { customersValidation } from "../middleware/customersValidation";
 import { gamesValidation } from "../middleware/gamesValidation";
 
 const router = Router();
@@ -14,7 +15,7 @@ router.get("/games", gamesList);
 router.post("/games", gamesValidation, gamesCreate)
 router.get("/customer", )
 router.get("/customer/id:", )
-router.post("/customer", )
+router.post("/customer", customersValidation, )
 router.put("/customer", )
 router.get("/rentals", )
 router.post("/rentals", )

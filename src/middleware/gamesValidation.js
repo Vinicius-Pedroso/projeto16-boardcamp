@@ -1,10 +1,12 @@
-
+import { gamesSchema } from "../schemas/gamesSchema";
 
 export async function gamesValidation(req, res, next) {
     const {name, stockTotal, categoryId, pricePerDay} = req.body;
 
-    if (name.length === 0 || stockTotal < 1 || pricePerDay < 1){
-        return res.sendStatus(400)
+    const { error } = gamesSchema.validate({name, stockTotal, pricePerDay});
+
+    if (error) {
+      return res.status(400);
     }
 
     try {
