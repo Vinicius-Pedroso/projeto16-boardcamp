@@ -1,4 +1,4 @@
-import { connection } from "../database.js";
+import { connection } from "../../database.js";
 
 export async function customersUpdate (req, res) {
   const {name, phone, cpf, birthday} = req.body;

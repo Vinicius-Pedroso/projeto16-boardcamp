@@ -1,7 +1,7 @@
 import { rentalsSchema } from "../schemas/rentalsSchema";
 import { connection } from "../database";
 
-export async function categoriesValidation(req, res, next) {
+export async function rentalsValidation(req, res, next) {
     const {customerId, gameId, daysRented} = req.body;
 
     const { error } = rentalsSchema.validate(daysRented);

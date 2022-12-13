@@ -1,4 +1,4 @@
-import {connection} from "../database.js";
+import {connection} from "../../database.js";
 
 export async function categoriesCreate (req, res) {
     const name = req.body.name;
