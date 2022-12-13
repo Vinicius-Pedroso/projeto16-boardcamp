@@ -1,4 +1,4 @@
-import { connection } from "../database";
+import { connection } from "../database.js";
 
 export async function gamesCreate (req, res) {
   const {name, image, stockTotal, categoryId, pricePerDay} = req.body;
@@ -8,6 +8,8 @@ export async function gamesCreate (req, res) {
     return res.status(201);
   } catch (err) {
     console.log(err);
-    return res.sendStatus(500);
+    return res.status(500);
   }
 };
+
+

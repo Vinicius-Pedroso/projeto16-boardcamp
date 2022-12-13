@@ -1,12 +1,12 @@
-import { connection } from "../database";
+import connection from "../database.js";
 
 export async function categoriesList (req, res) {
   
   try {
     const listCategories = await connection.query('SELECT * FROM categories');
-    res.status(201).send(listCategories);
+    return res.status(201).send(listCategories);
   } catch (err) {
     console.log(err);
-    return res.sendStatus(500);
+    return res.status(500);
   }
 };

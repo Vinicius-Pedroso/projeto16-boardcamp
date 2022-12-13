@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { categoriesCreate } from "../controllers/categoriesCreate";
-import { categoriesList } from "../controllers/categoriesList";
-import { gamesCreate } from "../controllers/gamesCreate";
-import { gamesList } from "../controllers/gamesList";
-import { categoriesValidation } from "../middleware/categoriesValidation";
-import { customersValidation } from "../middleware/customersValidation";
-import { gamesValidation } from "../middleware/gamesValidation";
+import { categoriesCreate } from "../controllers/categoriesCreate.js";
+import { categoriesList } from "../controllers/categoriesList.js";
+import { customersList } from "../controllers/customersList.js";
+import { customersListById } from "../controllers/customersListById.js";
+import { gamesCreate } from "../controllers/gamesCreate.js";
+import { gamesList } from "../controllers/gamesList.js";
+import { categoriesValidation } from "../middleware/categoriesValidation.js";
+import { customersValidation } from "../middleware/customersValidation.js";
+import { gamesValidation } from "../middleware/gamesValidation.js";
 
 const router = Router();
 
@@ -13,8 +15,8 @@ router.get("/categories", categoriesList)
 router.post("/categories", categoriesValidation, categoriesCreate);
 router.get("/games", gamesList);
 router.post("/games", gamesValidation, gamesCreate)
-router.get("/customer", )
-router.get("/customer/id:", )
+router.get("/customer", customersList)
+router.get("/customer/id:", customersListById)
 router.post("/customer", customersValidation, )
 router.put("/customer", )
 router.get("/rentals", )
