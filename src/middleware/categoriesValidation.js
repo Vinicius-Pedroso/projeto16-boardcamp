@@ -1,4 +1,5 @@
-import { categoriesSchema } from "../schemas/categoriesSchema";
+import { categoriesSchema } from "../schemas/categoriesSchema.js";
+import { connection } from "../database.js";
 
 export async function categoriesValidation(req, res, next) {
     const name = req.body.name;

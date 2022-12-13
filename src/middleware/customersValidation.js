@@ -1,4 +1,5 @@
-import { customersSchema } from "../schemas/customersSchemas";
+import { customersSchema } from "../schemas/customersSchemas.js";
+import { connection } from "../database.js";
 
 export async function customersValidation(req, res, next) {
     const {name, phone, cpf, birthday} = req.body;

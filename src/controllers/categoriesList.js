@@ -1,4 +1,4 @@
-
+import { connection } from "../database";
 
 export async function categoriesList (req, res) {
   
