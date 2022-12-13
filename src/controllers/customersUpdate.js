@@ -8,7 +8,7 @@ export async function customersUpdate (req, res) {
     if (checkCpf){
         return res.status(409)
     }
-    await connection.query(`INSERT INTO customers (name, phone, cpf, birthday) VALUES (${{name, phone, cpf, birthday}})`);
+    await connection.query(`UPDATE customers SET name=${name}, phone=${phone} birthday=${birthday} WHERE ${cpf}`);
     return res.status(201);
   } catch (err) {
     console.log(err);
